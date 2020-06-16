@@ -1,0 +1,7 @@
+﻿Temp
+*.apk
+Library/Artifacts
+Library/PackageCache
+Library/ShaderCache
+Library/PlayerDataCache
+Library/StateCache
