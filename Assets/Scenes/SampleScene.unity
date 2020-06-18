@@ -251,6 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerModel: {fileID: 1856567037}
   movementJoystick: {fileID: 1672216626}
+  viewJoystick: {fileID: 1672216626}
 --- !u!4 &695716573
 Transform:
   m_ObjectHideFlags: 0

@@ -5,23 +5,24 @@ using UnityEngine;
 public class HeliMove : MonoBehaviour
 {
     public GameObject playerModel;
+    public Joystick movementJoystick;
+    public Joystick viewJoystick;
 
-    int straveOn = 0;
+    float straveOn = 0;
     float straveSpeed = 0;
     float straveSpeedMax = 30.0f;
 
-    int moveForwardOn = 0;
+    float moveForwardOn = 0;
     float forwardSpeed = 0;
     float forwardSpeedMax = 30.0f;
 
-    int updownOn = 0;
+    float updownOn = 0;
     float updownSpeed = 0;
     float updownSpeedMax = 10.0f;
 
     float mouseMovement = 0;
     float travelDirection = 0.0f;
 
-    public Joystick movementJoystick;
 
     // Start is called before the first frame update
     void Start()
@@ -59,15 +60,19 @@ public class HeliMove : MonoBehaviour
 
     void CheckKeys()
     {
-        DirectionalKeys(KeyCode.A, KeyCode.D, ref this.straveOn);
-        DirectionalKeys(KeyCode.W, KeyCode.S, ref this.moveForwardOn);
-        DirectionalKeys(KeyCode.F, KeyCode.R, ref this.updownOn);
+        //DirectionalKeys(KeyCode.A, KeyCode.D, ref this.straveOn);
+        //DirectionalKeys(KeyCode.W, KeyCode.S, ref this.moveForwardOn);
+        //DirectionalKeys(KeyCode.F, KeyCode.R, ref this.updownOn);
+
+        this.straveOn = movementJoystick.Horizontal;
+        this.moveForwardOn = -movementJoystick.Vertical;
+        this.updownOn = viewJoystick.Vertical;
+        this.mouseMovement = viewJoystick.Horizontal;
     }
 
     void GetMouseMovements()
     {
-        this.mouseMovement = Input.GetAxis("Mouse X");
-
+        //this.mouseMovement = Input.GetAxis("Mouse X");
     }
 
 
